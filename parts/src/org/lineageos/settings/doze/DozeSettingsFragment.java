@@ -45,8 +45,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements
     private SwitchPreference mAlwaysOnDisplayPreference;
 
     private SwitchPreference mPickUpPreference;
-    private SwitchPreference mHandwavePreference;
-    private SwitchPreference mPocketPreference;
 
     private Handler mHandler = new Handler();
 
@@ -79,14 +77,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements
         mPickUpPreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_PICK_UP_KEY);
         mPickUpPreference.setEnabled(dozeEnabled);
         mPickUpPreference.setOnPreferenceChangeListener(this);
-
-        mHandwavePreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_HAND_WAVE_KEY);
-        mHandwavePreference.setEnabled(dozeEnabled);
-        mHandwavePreference.setOnPreferenceChangeListener(this);
-
-        mPocketPreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_POCKET_KEY);
-        mPocketPreference.setEnabled(dozeEnabled);
-        mPocketPreference.setOnPreferenceChangeListener(this);
 
         // Hide proximity sensor related features if the device doesn't support them
         if (!DozeUtils.getProxCheckBeforePulse(getActivity())) {
@@ -127,8 +117,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements
         mAlwaysOnDisplayPreference.setEnabled(isChecked);
 
         mPickUpPreference.setEnabled(isChecked);
-        mHandwavePreference.setEnabled(isChecked);
-        mPocketPreference.setEnabled(isChecked);
     }
 
     private void showHelp() {
