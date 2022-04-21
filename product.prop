@@ -2,6 +2,6 @@
 dalvik.vm.dex2oat64.enabled=true
 
 # Graphics
-debug.hwui.renderer=skiagl
+debug.hwui.renderer=skiavk
 debug.renderengine.backend=skiaglthreaded
 renderthread.skia.reduceopstasksplitting=true
